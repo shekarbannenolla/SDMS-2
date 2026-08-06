@@ -33,14 +33,16 @@ def add_student():
     roll = request.form["roll"]
     student_class = request.form["student_class"]
     school = request.form["school"]
+    email = request.form["email"]
+    Phone = request.form["Phone"]
 
     sql = """
     INSERT INTO students
-    (name, roll_number, class, school)
-    VALUES (%s,%s,%s,%s)
+    (name, roll_number, class, school, email, Phone)
+    VALUES (%s,%s,%s,%s,%s,%s)
     """
 
-    values = (name, roll, student_class, school)
+    values = (name, roll, student_class, school, email, Phone)
 
     cursor.execute(sql, values)
     db.commit()
