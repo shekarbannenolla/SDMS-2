@@ -32,3 +32,18 @@ jobs:
       - name: Check Python syntax
         run: |
           python -m py_compile app.py
+
+ docker-build:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+
+    needs: test
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t student-app:latest .
