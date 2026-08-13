@@ -59,9 +59,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}:/sdms-2:latest .
+          docker build -t ghcr.io/${{ github.repository_owner }}/sdms-2:latest .
 
       - name: Push Docker image
         run: |
-          docker push ghcr.io/${{ github.repository_owner }}:/sdms-2:latest
-
+          docker push ghcr.io/${{ github.repository_owner }}/sdms-2:latest
